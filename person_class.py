@@ -14,6 +14,9 @@ class Person(object):
     def add_friend(self, other_person):
         self.friends.append(other_person)
 
+    def num_friends(self):
+        print "%d" % len(self.friends)
+
 # 1. Instantiate an instance object of Person
 sonny = Person("Sonny", "sonny@hotmail.com", "483-485-4948")
 
@@ -45,3 +48,5 @@ print "\n%s has %d friends" % (jordan.name, len(jordan.friends))
 # Add friends using the add_friend method
 jordan.add_friend(sonny)
 print "\n%s has %d friends" % (jordan.name, len(jordan.friends))
+
+# Return the number of friends the person currently has using the num_friends method
