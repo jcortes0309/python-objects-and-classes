@@ -7,8 +7,8 @@ class Person(object):
     def greet(self, other_person):
         print "\nHello %s, I am %s!" % (other_person.name, self.name)
 
-    def contact_info(self):
-        print "\n%s's email is: %s and phone is: %s" % (self.name, self.email, self.phone)
+    def print_contact_info(self):
+        print "\n%s's email: %s, %s's phone number: %s" % (self.name, self.email, self.name, self.phone)
 
 
 # 1. Instantiate an instance object of Person
@@ -28,3 +28,6 @@ print "\n%s's email is: %s and phone is: %s" % (sonny.name, sonny.email, sonny.p
 
 # 6. Write another print statement to print the contact info of Jordan.
 print "\n%s's email is: %s and phone is: %s" % (jordan.name, jordan.email, jordan.phone)
+
+# Print out the contact info for a object instance of Person
+sonny.print_contact_info()
