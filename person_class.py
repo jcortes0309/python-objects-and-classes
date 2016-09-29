@@ -11,6 +11,8 @@ class Person(object):
     def print_contact_info(self):
         print "\n%s's email: %s, %s's phone number: %s" % (self.name, self.email, self.name, self.phone)
 
+    def add_friend(self, other_person):
+        self.friends.append(other_person)
 
 # 1. Instantiate an instance object of Person
 sonny = Person("Sonny", "sonny@hotmail.com", "483-485-4948")
@@ -34,8 +36,12 @@ print "\n%s's email is: %s and phone is: %s" % (jordan.name, jordan.email, jorda
 sonny.print_contact_info()
 
 # Add a friend to a person using list's append method.  Person class was modified by adding a friends instance variable(attribute) to it
-jordan.friends.append(sonny)
-sonny.friends.append(jordan)
+# jordan.friends.append(sonny) # Commented so it doesn't add the friend in this manner
+# sonny.friends.append(jordan) # Commented so it doesn't add the friend in this manner
 
 # Get the number of friends a person has by using the len function on his friends
+print "\n%s has %d friends" % (jordan.name, len(jordan.friends))
+
+# Add friends using the add_friend method
+jordan.add_friend(sonny)
 print "\n%s has %d friends" % (jordan.name, len(jordan.friends))
