@@ -3,6 +3,7 @@ class Person(object):
         self.name = name
         self.email = email
         self.phone = phone
+        self.friends = [] # Adds a friends list variable to the Person class
 
     def greet(self, other_person):
         print "\nHello %s, I am %s!" % (other_person.name, self.name)
@@ -31,3 +32,10 @@ print "\n%s's email is: %s and phone is: %s" % (jordan.name, jordan.email, jorda
 
 # Print out the contact info for a object instance of Person
 sonny.print_contact_info()
+
+# Add a friend to a person using list's append method.  Person class was modified by adding a friends instance variable(attribute) to it
+jordan.friends.append(sonny)
+sonny.friends.append(jordan)
+
+# Get the number of friends a person has by using the len function on his friends
+print "\n%s has %d friends" % (jordan.name, len(jordan.friends))
