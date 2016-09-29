@@ -4,9 +4,11 @@ class Person(object):
         self.email = email
         self.phone = phone
         self.friends = [] # Adds a friends list variable to the Person class
+        self.greeting_count = 0
 
     def greet(self, other_person):
         print "\nHello %s, I am %s!" % (other_person.name, self.name)
+        self.greeting_count += 1
 
     def print_contact_info(self):
         print "\n%s's email: %s, %s's phone number: %s" % (self.name, self.email, self.name, self.phone)
@@ -51,3 +53,10 @@ jordan.add_friend(sonny)
 
 # Return the number of friends the person currently has using the num_friends method
 jordan.num_friends()
+
+# Each time the greet method is called, we'll increment greeting_count by 1
+print "\n%s's greeting count: %d" % (sonny.name, sonny.greeting_count)
+sonny.greet(jordan)
+print "%s's greeting count: %d" % (sonny.name, sonny.greeting_count)
+sonny.greet(jordan)
+print "%s's greeting count: %d" % (sonny.name, sonny.greeting_count)
