@@ -6,6 +6,9 @@ class Person(object):
         self.friends = [] # Adds a friends list variable to the Person class
         self.greeting_count = 0
 
+    def __repr__(self):
+        return "%s's information: %s %s" % (self.name, self.email, self.phone)
+
     def greet(self, other_person):
         print "\nHello %s, I am %s!" % (other_person.name, self.name)
         self.greeting_count += 1
