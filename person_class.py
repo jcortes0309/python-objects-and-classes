@@ -5,6 +5,7 @@ class Person(object):
         self.phone = phone
         self.friends = [] # Adds a friends list variable to the Person class
         self.greeting_count = 0
+        self.unique_people_greeted = []
 
     def __repr__(self):
         return "%s's information: %s %s" % (self.name, self.email, self.phone)
@@ -12,6 +13,10 @@ class Person(object):
     def greet(self, other_person):
         print "\nHello %s, I am %s!" % (other_person.name, self.name)
         self.greeting_count += 1
+        if other_person.name not in self.unique_people_greeted:
+            self.unique_people_greeted.append(other_person.name)
+        else:
+            pass
 
     def print_contact_info(self):
         print "\n%s's email: %s, %s's phone number: %s" % (self.name, self.email, self.name, self.phone)
@@ -21,6 +26,9 @@ class Person(object):
 
     def num_friends(self):
         print "\n%s has %d friends" % (self.name, len(self.friends))
+
+    def num_unique_people_greeted(self):
+        print "\nUnique people greeted by %s: %d" % (self.name, len(self.unique_people_greeted))
 
 # 1. Instantiate an instance object of Person
 sonny = Person("Sonny", "sonny@hotmail.com", "483-485-4948")
@@ -63,3 +71,6 @@ sonny.greet(jordan)
 print "%s's greeting count: %d" % (sonny.name, sonny.greeting_count)
 sonny.greet(jordan)
 print "%s's greeting count: %d" % (sonny.name, sonny.greeting_count)
+
+# Keep track of the number of unique people a person has greeted, and be able to report that number via the num_unique_people_greeted method:
+sonny.num_unique_people_greeted()
